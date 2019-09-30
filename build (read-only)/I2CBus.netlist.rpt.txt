@@ -1,0 +1,522 @@
+Static Timing Analysis:
+ 
+ABC: WireLoad = "none"  Gates =     52 ( 34.6 %)   Cap = 26.8 ff (  4.4 %)   Area =     4284.00 ( 80.8 %)   Delay =   114.31 ps  ( 34.6 %)               
+ABC: Path  0 --       1 : 0   17 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout = 305.6 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      65 : 3    1 OAI21X1 A =  92.00  Df = 114.3  -15.4 ps  S =  53.6 ps  Cin = 23.8 ff  Cout =   0.0 ff  Cmax = 405.5 ff  G =    0  
+ABC: Start-point = pi00.  End-point = po09.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.1.2. Re-integrating ABC results.
+ABC RESULTS:             INVX1 cells:        9
+ABC RESULTS:             INVX2 cells:        9
+ABC RESULTS:           NAND2X1 cells:       23
+ABC RESULTS:            NOR2X1 cells:        1
+ABC RESULTS:           OAI21X1 cells:        9
+ABC RESULTS:          _const1_ cells:        1
+ABC RESULTS:        internal signals:       27
+ABC RESULTS:           input signals:       19
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+11.2. Extracting gate netlist of module `\BIU' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+11.3. Extracting gate netlist of module `\DU' to `<abc-temp-dir>/input.blif'..
+Extracted 56 gates and 76 wires to a netlist network with 20 inputs and 27 outputs.
+
+11.3.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /tmp/stdcells/osu035_stdcells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFNEGX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFPOSX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "PADINOUT".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX2".
+ABC: Scl_LibertyReadGenlib() skipped cell "PADFC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADNC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADVDD" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADGND" without logic function.
+ABC: Library "osu035_stdcells" from "/tmp/stdcells/osu035_stdcells.lib" has 28 cells (11 skipped: 4 seq; 3 tri-state; 4 no func).  Time =     0.01 sec
+ABC: Memory =    0.38 MB. Time =     0.01 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FAX1").
+ABC: + read_constr -v /tmp/ws/constraints_file.constr 
+ABC: Directive set_driving_cell should be followed by two arguments.
+ABC: Directive set_load should be followed by two arguments.
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o -D 1 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -D 1 
+ABC: Cannot meet the target required times (1.00). Continue anyway.
+ABC: + buffer 
+ABC: + upsize -D 1 
+ABC: + dnsize -D 1 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     53 ( 34.0 %)   Cap = 26.7 ff (  4.2 %)   Area =     4476.00 ( 83.0 %)   Delay =   114.31 ps  ( 34.0 %)               
+ABC: Path  0 --       9 : 0    2 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  45.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      66 : 2    2 NAND2X1 A =  96.00  Df =  70.6  -16.7 ps  S =  87.5 ps  Cin = 17.8 ff  Cout =  18.0 ff  Cmax = 403.1 ff  G =  100  
+ABC: Path  2 --      67 : 3    1 OAI21X1 A =  92.00  Df = 114.3  -15.4 ps  S =  53.6 ps  Cin = 23.8 ff  Cout =   0.0 ff  Cmax = 405.5 ff  G =    0  
+ABC: Start-point = pi08.  End-point = po09.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.3.2. Re-integrating ABC results.
+ABC RESULTS:             INVX1 cells:        9
+ABC RESULTS:             INVX2 cells:        9
+ABC RESULTS:           NAND2X1 cells:       25
+ABC RESULTS:            NOR2X1 cells:        1
+ABC RESULTS:           OAI21X1 cells:        9
+ABC RESULTS:        internal signals:       29
+ABC RESULTS:           input signals:       20
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+11.4. Extracting gate netlist of module `\I2CBus' to `<abc-temp-dir>/input.blif'..
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 1 outputs.
+
+11.4.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /tmp/stdcells/osu035_stdcells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFNEGX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFPOSX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "PADINOUT".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX2".
+ABC: Scl_LibertyReadGenlib() skipped cell "PADFC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADNC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADVDD" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADGND" without logic function.
+ABC: Library "osu035_stdcells" from "/tmp/stdcells/osu035_stdcells.lib" has 28 cells (11 skipped: 4 seq; 3 tri-state; 4 no func).  Time =     0.01 sec
+ABC: Memory =    0.38 MB. Time =     0.01 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FAX1").
+ABC: + read_constr -v /tmp/ws/constraints_file.constr 
+ABC: Directive set_driving_cell should be followed by two arguments.
+ABC: Directive set_load should be followed by two arguments.
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o -D 1 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -D 1 
+ABC: Cannot meet the target required times (1.00). Continue anyway.
+ABC: + buffer 
+ABC: + upsize -D 1 
+ABC: + dnsize -D 1 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =      3 (  0.0 %)   Cap = 23.7 ff (  0.0 %)   Area =      380.00 (100.0 %)   Delay =   241.27 ps  ( 66.7 %)               
+ABC: Path  0 --       1 : 0    1 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  29.6 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --       7 : 3    1 MUX2X1  A = 192.00  Df = 165.7   -3.2 ps  S = 143.8 ps  Cin = 27.5 ff  Cout =  27.1 ff  Cmax = 411.8 ff  G =   98  
+ABC: Path  2 --       9 : 3    1 OAI21X1 A =  92.00  Df = 241.3  -33.0 ps  S =  75.7 ps  Cin = 23.8 ff  Cout =   0.0 ff  Cmax = 405.5 ff  G =    0  
+ABC: Start-point = pi0.  End-point = po0.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.4.2. Re-integrating ABC results.
+ABC RESULTS:            MUX2X1 cells:        1
+ABC RESULTS:           NAND2X1 cells:        1
+ABC RESULTS:           OAI21X1 cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+11.5. Extracting gate netlist of module `\MasterControl' to `<abc-temp-dir>/input.blif'..
+Extracted 58 gates and 79 wires to a netlist network with 21 inputs and 19 outputs.
+
+11.5.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /tmp/stdcells/osu035_stdcells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFNEGX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFPOSX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "PADINOUT".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX2".
+ABC: Scl_LibertyReadGenlib() skipped cell "PADFC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADNC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADVDD" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADGND" without logic function.
+ABC: Library "osu035_stdcells" from "/tmp/stdcells/osu035_stdcells.lib" has 28 cells (11 skipped: 4 seq; 3 tri-state; 4 no func).  Time =     0.01 sec
+ABC: Memory =    0.38 MB. Time =     0.01 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FAX1").
+ABC: + read_constr -v /tmp/ws/constraints_file.constr 
+ABC: Directive set_driving_cell should be followed by two arguments.
+ABC: Directive set_load should be followed by two arguments.
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o -D 1 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -D 1 
+ABC: Cannot meet the target required times (1.00). Continue anyway.
+ABC: + buffer 
+ABC: + upsize -D 1 
+ABC: + dnsize -D 1 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     50 ( 28.0 %)   Cap = 38.2 ff (  0.5 %)   Area =     5424.00 ( 98.0 %)   Delay =   538.48 ps  ( 10.0 %)               
+ABC: Path  0 --       1 : 0    4 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  93.2 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      59 : 3    4 NOR3X1  A = 256.00  Df = 291.5  -34.7 ps  S = 347.0 ps  Cin = 31.2 ff  Cout =  97.9 ff  Cmax = 419.3 ff  G =  313  
+ABC: Path  2 --      62 : 3    1 OAI21X1 A =  92.00  Df = 538.5 -120.0 ps  S = 113.0 ps  Cin = 23.8 ff  Cout =   0.0 ff  Cmax = 405.5 ff  G =    0  
+ABC: Start-point = pi00.  End-point = po06.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.5.2. Re-integrating ABC results.
+ABC RESULTS:            AND2X2 cells:        1
+ABC RESULTS:           AOI21X1 cells:        1
+ABC RESULTS:           AOI22X1 cells:        1
+ABC RESULTS:             INVX1 cells:       13
+ABC RESULTS:             INVX2 cells:        1
+ABC RESULTS:           NAND2X1 cells:        4
+ABC RESULTS:           NAND3X1 cells:        6
+ABC RESULTS:            NOR2X1 cells:        4
+ABC RESULTS:            NOR3X1 cells:        2
+ABC RESULTS:           OAI21X1 cells:       12
+ABC RESULTS:           OAI22X1 cells:        4
+ABC RESULTS:           XNOR2X1 cells:        1
+ABC RESULTS:        internal signals:       39
+ABC RESULTS:           input signals:       21
+ABC RESULTS:          output signals:       19
+Removing temp directory.
+
+11.6. Extracting gate netlist of module `\SSU' to `<abc-temp-dir>/input.blif'..
+Extracted 30 gates and 39 wires to a netlist network with 9 inputs and 6 outputs.
+
+11.6.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /tmp/stdcells/osu035_stdcells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFNEGX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFPOSX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "PADINOUT".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX2".
+ABC: Scl_LibertyReadGenlib() skipped cell "PADFC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADNC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADVDD" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADGND" without logic function.
+ABC: Library "osu035_stdcells" from "/tmp/stdcells/osu035_stdcells.lib" has 28 cells (11 skipped: 4 seq; 3 tri-state; 4 no func).  Time =     0.01 sec
+ABC: Memory =    0.38 MB. Time =     0.01 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FAX1").
+ABC: + read_constr -v /tmp/ws/constraints_file.constr 
+ABC: Directive set_driving_cell should be followed by two arguments.
+ABC: Directive set_load should be followed by two arguments.
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o -D 1 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -D 1 
+ABC: Cannot meet the target required times (1.00). Continue anyway.
+ABC: + buffer 
+ABC: + upsize -D 1 
+ABC: + dnsize -D 1 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     20 ( 10.0 %)   Cap = 35.0 ff (  2.5 %)   Area =     2228.00 ( 95.0 %)   Delay =   416.19 ps  ( 15.0 %)               
+ABC: Path  0 --       7 : 0    3 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  75.3 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      28 : 3    3 OAI21X1 A =  92.00  Df = 323.0  -29.9 ps  S = 246.9 ps  Cin = 23.8 ff  Cout =  67.3 ff  Cmax = 405.5 ff  G =  281  
+ABC: Path  2 --      29 : 2    1 AND2X1  A = 128.00  Df = 416.2   -6.8 ps  S =  33.6 ps  Cin = 17.9 ff  Cout =   0.0 ff  Cmax = 411.0 ff  G =    0  
+ABC: Start-point = pi6.  End-point = po2.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.6.2. Re-integrating ABC results.
+ABC RESULTS:            AND2X1 cells:        1
+ABC RESULTS:            AND2X2 cells:        1
+ABC RESULTS:           AOI21X1 cells:        3
+ABC RESULTS:             INVX1 cells:        2
+ABC RESULTS:           NAND2X1 cells:        2
+ABC RESULTS:           NAND3X1 cells:        2
+ABC RESULTS:            NOR2X1 cells:        2
+ABC RESULTS:           OAI21X1 cells:        3
+ABC RESULTS:             OR2X2 cells:        4
+ABC RESULTS:        internal signals:       24
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        6
+Removing temp directory.
+
+11.7. Extracting gate netlist of module `\counter' to `<abc-temp-dir>/input.blif'..
+Extracted 13 gates and 18 wires to a netlist network with 5 inputs and 5 outputs.
+
+11.7.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /tmp/stdcells/osu035_stdcells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFNEGX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFPOSX1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "PADINOUT".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUFX2".
+ABC: Scl_LibertyReadGenlib() skipped cell "PADFC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADNC" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADVDD" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "PADGND" without logic function.
+ABC: Library "osu035_stdcells" from "/tmp/stdcells/osu035_stdcells.lib" has 28 cells (11 skipped: 4 seq; 3 tri-state; 4 no func).  Time =     0.01 sec
+ABC: Memory =    0.38 MB. Time =     0.01 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FAX1").
+ABC: + read_constr -v /tmp/ws/constraints_file.constr 
+ABC: Directive set_driving_cell should be followed by two arguments.
+ABC: Directive set_load should be followed by two arguments.
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o -D 1 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -D 1 
+ABC: Cannot meet the target required times (1.00). Continue anyway.
+ABC: + buffer 
+ABC: + upsize -D 1 
+ABC: + dnsize -D 1 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     15 ( 26.7 %)   Cap = 42.4 ff (  6.7 %)   Area =     1636.00 ( 86.7 %)   Delay =   417.82 ps  ( 33.3 %)               
+ABC: Path  0 --       4 : 0    4 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  89.2 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      13 : 2    4 AND2X2  A = 128.00  Df = 221.4  -24.5 ps  S = 165.3 ps  Cin = 17.9 ff  Cout =  98.8 ff  Cmax = 831.0 ff  G =  551  
+ABC: Path  2 --      20 : 3    1 NAND3X1 A = 144.00  Df = 348.2  -72.8 ps  S = 160.8 ps  Cin = 22.3 ff  Cout =  26.6 ff  Cmax = 386.4 ff  G =  118  
+ABC: Path  3 --      23 : 3    1 AOI21X1 A = 128.00  Df = 417.8  -64.0 ps  S =  75.0 ps  Cin = 25.3 ff  Cout =   0.0 ff  Cmax = 426.2 ff  G =    0  
+
+
+Longest Path Summary:
+Path _109_/CLK to _104_/D delay 2505.92 ps
+
+Design Summary:
+
+15. Printing statistics.
+
+=== AU ===
+
+   Number of wires:                 51
+   Number of wire bits:             71
+   Number of public wires:           7
+   Number of public wire bits:      20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 60
+     DFFSR                           9
+     INVX1                           9
+     INVX2                           9
+     NAND2X1                        23
+     NOR2X1                          1
+     OAI21X1                         9
+
+   Chip area for this module: 10620.000000
+
+=== BIU ===
+
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           7
+   Number of public wire bits:       7
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     DFFPOSX1                        2
+
+   Chip area for this module: 768.000000
+
+=== DU ===
+
+   Number of wires:                 53
+   Number of wire bits:             74
+   Number of public wires:           7
+   Number of public wire bits:      21
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     DFFSR                           9
+     INVX1                           9
+     INVX2                           9
+     NAND2X1                        25
+     NOR2X1                          1
+     OAI21X1                         9
+
+   Chip area for this module: 10812.000000
+
+=== I2CBus ===
+
+   Number of wires:                 25
+   Number of wire bits:             39
+   Number of public wires:          23
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     AU                              1
+     BIU                             1
+     DU                              1
+     MUX2X1                          1
+     MasterControl                   1
+     NAND2X1                         1
+     OAI21X1                         1
+     SSU                             1
+     counter                         1
+
+   Area for cell type \counter is unknown!
+   Area for cell type \SSU is unknown!
+   Area for cell type \MasterControl is unknown!
+   Area for cell type \BIU is unknown!
+   Area for cell type \AU is unknown!
+   Area for cell type \DU is unknown!
+
+   Chip area for this module: 380.000000
+
+=== MasterControl ===
+
+   Number of wires:                 64
+   Number of wire bits:             74
+   Number of public wires:          16
+   Number of public wire bits:      24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 69
+     AND2X2                          1
+     AOI21X1                         1
+     AOI22X1                         1
+     DFFPOSX1                        1
+     DFFSR                          18
+     INVX1                          13
+     INVX2                           1
+     NAND2X1                         4
+     NAND3X1                         6
+     NOR2X1                          4
+     NOR3X1                          2
+     OAI21X1                        12
+     OAI22X1                         4
+     XNOR2X1                         1
+
+   Chip area for this module: 18480.000000
+
+=== SSU ===
+
+   Number of wires:                 25
+   Number of wire bits:             31
+   Number of public wires:           7
+   Number of public wire bits:      11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 28
+     $_DLATCH_P_                     3
+     AND2X1                          1
+     AND2X2                          1
+     AOI21X1                         3
+     DFFSR                           5
+     INVX1                           2
+     NAND2X1                         2
+     NAND3X1                         2
+     NOR2X1                          2
+     OAI21X1                         3
+     OR2X2                           4
+
+   Area for cell type $_DLATCH_P_ is unknown!
+
+   Chip area for this module: 5748.000000
+
+=== counter ===
+
+   Number of wires:                 18
+   Number of wire bits:             22
+   Number of public wires:           6
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 19
+     AND2X2                          1
+     AOI21X1                         2
+     DFFSR                           4
+     INVX1                           2
+     INVX2                           1
+     INVX8                           1
+     NAND2X1                         1
+     NAND3X1                         3
+     NOR2X1                          1
+     OAI21X1                         3
+
+   Chip area for this module: 4452.000000
+
+=== design hierarchy ===
+
+   I2CBus                            1
+     AU                              1
+     BIU                             1
+     DU                              1
+     MasterControl                   1
+     SSU                             1
+     counter                         1
+
+   Number of wires:                243
+   Number of wire bits:            318
+   Number of public wires:          73
+   Number of public wire bits:     128
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                243
+     $_DLATCH_P_                     3
+     AND2X1                          1
+     AND2X2                          3
+     AOI21X1                         6
+     AOI22X1                         1
+     DFFPOSX1                        3
+     DFFSR                          45
+     INVX1                          35
+     INVX2                          20
+     INVX8                           1
+     MUX2X1                          1
+     NAND2X1                        56
+     NAND3X1                        11
+     NOR2X1                          9
+     NOR3X1                          2
+     OAI21X1                        37
+     OAI22X1                         4
+     OR2X2                           4
+     XNOR2X1                         1
+
+   Chip area for this module: 51260.000000
+

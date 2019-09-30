@@ -1,0 +1,42 @@
+Static Timing Analysis:
+ 
+ABC: WireLoad = "none"  Gates =     50 ( 28.0 %)   Cap = 38.2 ff (  0.5 %)   Area =     5424.00 ( 98.0 %)   Delay =   538.48 ps  ( 10.0 %)               
+ABC: Path  0 --       8 : 0    4 pi      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  93.2 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      68 : 3    4 NOR3X1  A = 256.00  Df = 291.5  -34.7 ps  S = 347.0 ps  Cin = 31.2 ff  Cout =  97.9 ff  Cmax = 419.3 ff  G =  313  
+ABC: Path  2 --      71 : 3    1 OAI21X1 A =  92.00  Df = 538.5 -120.0 ps  S = 113.0 ps  Cin = 23.8 ff  Cout =   0.0 ff  Cmax = 405.5 ff  G =    0  
+
+
+Longest Path Summary:
+Path _116_/CLK to _098_/D delay 1507.64 ps
+
+Design Summary:
+
+15. Printing statistics.
+
+=== MasterControl ===
+
+   Number of wires:                 64
+   Number of wire bits:             74
+   Number of public wires:          16
+   Number of public wire bits:      24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 69
+     AND2X2                          1
+     AOI21X1                         1
+     AOI22X1                         1
+     DFFPOSX1                        1
+     DFFSR                          18
+     INVX1                          13
+     INVX2                           1
+     NAND2X1                         4
+     NAND3X1                         6
+     NOR2X1                          4
+     NOR3X1                          2
+     OAI21X1                        12
+     OAI22X1                         4
+     XNOR2X1                         1
+
+   Chip area for this module: 18480.000000
+
